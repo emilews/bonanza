@@ -13,7 +13,20 @@
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
-            <h1><a href="/">Tienda de Arte</a></h1>
+            <h1><a href="/">BONANZA WE XD</a></h1>
+
+            <form method="POST" action = "{% url 'post_new' %}">{% csrf_token %}
+    <label for="colorSelect">Choose color</label>
+    <select type="text" id="colorSelect" name="colorSelect">
+        <option selected>GREEN</option>
+        <option>BLUE</option>
+        <option>RED</option>
+        <option>ORANGE</option>
+        <option>BLACK</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit!"/>
+        </form>
         </div>
         <div class="content container">
             <div class="row">
