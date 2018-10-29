@@ -15,18 +15,15 @@
             {% endif %}
             <h1><a href="/">BONANZA WE XD</a></h1>
 
-            <form method="POST" action = "{% url 'post_new' %}">{% csrf_token %}
-    <label for="colorSelect">Choose color</label>
-    <select type="text" id="colorSelect" name="colorSelect">
-        <option selected>GREEN</option>
-        <option>BLUE</option>
-        <option>RED</option>
-        <option>ORANGE</option>
-        <option>BLACK</option>
-    </select>
-    <br><br>
-    <input type="submit" value="Submit!"/>
-        </form>
+            <form>
+                <label for="categoria">Categoria</label>
+                <select type="text" id="categoria" name="categoria">
+                    <option selected>Licra</option>
+                    <option>Camiseta</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit!"/>
+            </form>
         </div>
         <div class="content container">
             <div class="row">
