@@ -8,14 +8,21 @@ from django.views.generic import TemplateView
 
 
 def post_list(request):
-    cat = request.GET.get('categoria')
-    print(cat)
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+def post_category(request):
+    post = get_object_or_404(Post)
+    cat = request.GET.get('categoria')
+    print(cat)
+    if post.category == cat:
+        return render(request, 'blog/post_category.html', {'post': post})
+    else:
+        return render(request, 'blog/not_found.html')
 
 def post_new(request):
     if request.method == "POST":

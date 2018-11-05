@@ -2,7 +2,7 @@ import graphene
 
 from graphene_django.types import DjangoObjectType
 
-from .models import Post
+from .models import Post, Category
 
 
 class PostType (DjangoObjectType):
@@ -10,9 +10,8 @@ class PostType (DjangoObjectType):
         model = Post
 
 
-class Query(graphene.AbstractType):
+class Query(object):
     all_posts = graphene.List(PostType)
 
     def resolve_all_posts(self,context):
-        
-        return 
+        return Post.objects.all()

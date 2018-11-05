@@ -25,7 +25,7 @@ from mysite.schema import schema
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
-    path('graphql/', GraphQLView.as_view(graphiql=True)),
+    path('graphql/', GraphQLView.as_view(graphiql=False)),
 ]
 
 if settings.DEBUG:
