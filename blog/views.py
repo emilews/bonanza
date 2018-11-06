@@ -16,7 +16,7 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def post_category(request):
-    post = get_object_or_404(Post)
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     cat = request.GET.get('categoria')
     print(cat)
     if post.category == cat:
