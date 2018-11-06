@@ -1,40 +1,35 @@
 import React, { Component } from 'react';
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import DropdownMenuHandler from './Dropdownmenu'
+import Sticky from 'react-sticky-el';
+import Product from './Product'
+
 import './App.css';
-
-
+import Image from'./4k.jpg'
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      dropdownOpen: false
-    };
+      everything: null
+    }
   }
 
-  toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    });
+  componentDidMount(){
+    //TO DO: Make calls to rest API
   }
     
   render() {
     return (
       <div className="App">
-        <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret>
-            Button Dropdown
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Header</DropdownItem>
-            <DropdownItem disabled>Action</DropdownItem>
-            <DropdownItem>Another Action</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>Another Action</DropdownItem>
-          </DropdownMenu>
-      </ButtonDropdown>
+        <div class="Sticker">
+          <Sticky>
+            <DropdownMenuHandler/>
+          </Sticky>
+      </div>
+        <div class="data-container">
+          <Product tela = "Gari" precio="$45" imagen={Image}/>
+        </div>
       </div>
     );
   }
