@@ -25,7 +25,7 @@ SECRET_KEY = 'ujq9ppfygj#x=&y(cza-0k#b&&$3ubai#2c86j=mkx4+gbols4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'localhost']
 
 
 # Application definition
@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'graphene_django',
     'blog',
     'rest_framework',
+    'corsheaders',
 ]
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,6 +56,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+
+CORS_ORIGIN_ALLOW_ALL = False
+
 
 TEMPLATES = [
     {

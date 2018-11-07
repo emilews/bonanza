@@ -11,24 +11,28 @@ class App extends Component {
     super(props);
 
     this.state = {
-      everything: null
+      no_cors: 'https://cors-anywhere.herokuapp.com/'
     }
   }
 
   componentDidMount(){
-    //TO DO: Make calls to rest API
+    fetch('http://localhost:8000/api/v1/post/').then(
+     response => {
+      console.log(response)
+      }
+    )
   }
     
   render() {
     return (
       <div className="App">
-        <div class="Sticker">
+        <div className="Sticker">
           <Sticky>
             <DropdownMenuHandler/>
           </Sticky>
       </div>
-        <div class="data-container">
-          <Product tela = "Gari" precio="$45" imagen={Image}/>
+        <div className="data-container">
+          
         </div>
       </div>
     );

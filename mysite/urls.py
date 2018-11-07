@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),
     path('graphql/', GraphQLView.as_view(graphiql=False)),
-    path('api/', include('rest_framework.urls')),
+    re_path('api/(?P<version>(v1|v2))/', include('blog.urls')),
 ]
 
 if settings.DEBUG:

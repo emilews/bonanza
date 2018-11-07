@@ -5,8 +5,8 @@ class Product extends Component{
         return (
           <div className="Product">
           <img src={this.props.imagen} alt={this.props.tela}></img>
-            <div class="middle">
-              <div class="text">
+            <div className="middle">
+              <div className="text">
                 {this.props.tela}-
                 
                 {this.props.precio}

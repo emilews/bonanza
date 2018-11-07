@@ -19,11 +19,11 @@ class DropdownMenuHandler extends Component{
   }
   render(){
     return(
-      <div class="Sticker">
-        <div class="Titulo">
+      <div className="Sticker">
+        <div className="Titulo">
           Telas Bonanza
         </div>
-        <div class="DMenu">
+        <div className="DMenu">
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle caret>
               Button Dropdown
