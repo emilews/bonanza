@@ -17,6 +17,10 @@ class DropdownMenuHandler extends Component{
       dropdownOpen: !this.state.dropdownOpen
     });
   }
+  Force(){
+    this.forceUpdate();
+    console.log(this.state.data)
+  }
   render(){
     return(
       <div className="Sticker">
@@ -30,10 +34,8 @@ class DropdownMenuHandler extends Component{
             </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem header>Header</DropdownItem>
-                <DropdownItem disabled>Action</DropdownItem>
                 <DropdownItem>Another Action</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Another Action</DropdownItem>
+                <DropdownItem onClick={this.Force.bind(this)}>Force Update</DropdownItem>
               </DropdownMenu>
           </ButtonDropdown>
         </div>

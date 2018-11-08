@@ -2,7 +2,10 @@
     display: table;
     width: auto;
     margin: 0px;
-    padding: 0px;
+    padding: 10px;
+}
+.inliner{
+  display: inline-block;
 }
 .Product:hover img{
     opacity: 0.3;
