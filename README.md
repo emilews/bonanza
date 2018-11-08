@@ -56,3 +56,12 @@ Either way, you should wait a little for it to finish and once it finishes just 
 ```
 $ python manage.py runserver
 ```
+Also, for tests, create a super user in Django with
+
+```
+$ python manage.py createsuperuser
+```
+And follow the on screen instructions
+
+Now go into the Admin Page of Django and log in using the user you just created.
+Under Post, create some new ones and start the Django server again.
