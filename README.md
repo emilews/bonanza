@@ -2,9 +2,11 @@
 
 ## Requirements
 
- -[Node.js](https://nodejs.org/)
- -[Python 3.6.4](https://www.python.org/downloads/)
- -[Yarn](https://yarnpkg.com/es-ES/)
+  - [Node.js](https://nodejs.org/)
+
+  - [Python 3.6.4](https://www.python.org/downloads/)
+
+  - [Yarn](https://yarnpkg.com/es-ES/)
 
 ## How to run in dev mode
 
