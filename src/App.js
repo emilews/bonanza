@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import DropdownMenuHandler from './Dropdownmenu'
-import Sticky from 'react-sticky-el';
-import Product from './Product'
-
-import axios from 'axios'
 import './App.css';
-import Image from'./4k.jpg'
+
+import Product from './Product'
+import StickyHeader from './StickyHeader'
 
 class App extends Component {
   constructor(props) {
@@ -33,14 +30,56 @@ class App extends Component {
     }
     )
   }
+
+  cat(){
+    fetch('http://127.0.0.1:8000/api/v1/category/LIC').then(
+      data => data.json()
+     ).then((result) =>{
+       this.setState({
+         data : result,
+         loaded : true
+       })
+       this.forceUpdate();
+     }
+     )
+   }
+   cat2(){
+    fetch('http://127.0.0.1:8000/api/v1/category/CAM').then(
+      data => data.json()
+     ).then((result) =>{
+       this.setState({
+         data : result,
+         loaded : true
+       })
+       this.forceUpdate();
+     }
+     )
+   }
+   todo(){
+    fetch('http://127.0.0.1:8000/api/v1/post/').then(
+      data => data.json()
+     ).then((result) =>{
+       this.setState({
+         data : result,
+         loaded : true
+       })
+       this.forceUpdate();
+     }
+     )
+   }
+
   render() {
     return (
       <div className="App">
-        <div className="Sticker">
-          <Sticky>
-            <DropdownMenuHandler/>
-          </Sticky>
-      </div>
+        <header className="Sticker">
+          <StickyHeader/>
+        </header>
+        <div className="cat-container">
+          <button onClick={this.todo.bind(this)}>Todo</button>
+          <button onClick={this.cat.bind(this)}>Licra</button>
+          <button onClick={this.cat2.bind(this)}>Camiseta</button>
+          
+        </div>
         <div className="data-container">
           {this.state.data.map(function(prod, index){
                 return (<Product title = {prod.title} price = {prod.price} image = {prod.image}/>)

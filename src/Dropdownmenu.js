@@ -28,16 +28,7 @@ class DropdownMenuHandler extends Component{
           Telas Bonanza
         </div>
         <div className="DMenu">
-          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle caret>
-              Button Dropdown
-            </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem header>Header</DropdownItem>
-                <DropdownItem>Another Action</DropdownItem>
-                <DropdownItem onClick={this.Force.bind(this)}>Force Update</DropdownItem>
-              </DropdownMenu>
-          </ButtonDropdown>
+        
         </div>
       </div>
         );

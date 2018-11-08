@@ -58,4 +58,17 @@ class ListPostView(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-    
+class ListPostByCategory(generics.ListAPIView):
+    """
+    Provides a get method handler.
+    """
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def get_queryset(self):
+        """
+        This returns only the posts with the 
+        category that is asked for
+        """
+        cat = self.kwargs['category']
+        return Post.objects.filter(category=cat)

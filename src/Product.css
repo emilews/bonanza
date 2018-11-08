@@ -1,40 +1,44 @@
 .Product{
-    display: table;
-    width: auto;
-    margin: 0px;
-    padding: 10px;
+  position: relative;
+  display: table;
+  width: auto;
+  margin: 0px;
 }
 .inliner{
   display: inline-block;
+  margin: 10px;
 }
-.Product:hover img{
-    opacity: 0.3;
 
-}
 img {
-    border-radius: 8px;
-    height: auto; 
-    width: auto; 
-    max-width: 300px; 
-    max-height: 300px;
-    transition: .5s ease;
+  border-radius: 8px;
+  height: auto; 
+  width: auto; 
+  max-width: 300px; 
+  max-height: 300px;
+  transition: transform .2s;
+  box-shadow: 1px 1px 5px grey;
 }
 .middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 45%;
-    left: 17%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  .Product:hover .middle {
-    opacity: 1;
-  }
-  .text {
-    background-color: rgba(65, 71, 65, 0.466);
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  opacity: 0.3;
+  transition: .5s ease;
+  transform: translate(-50%, 50%);
+}
+img:hover {
+  position: relative;
+  transform: scale(1.01);
+}
+.Product:hover .middle{
+  opacity: 1;
+}
+
+.text {
+  background-color: rgba(65, 71, 65, 0.466);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  padding: 7px 32px;
+}
