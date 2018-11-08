@@ -56,7 +56,9 @@ Either way, you should wait a little for it to finish and once it finishes just 
 ```
 $ python manage.py runserver
 ```
-Also, for tests, create a super user in Django with
+## Tests
+
+For tests, create a super user in Django with
 
 ```
 $ python manage.py createsuperuser
