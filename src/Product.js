@@ -10,14 +10,15 @@ class Product extends Component{
     }
   }
     render() {
+      const {image, title, price } = this.props.prod
         return (
           <div className="inliner">
           <div className="Product">
-            <img src={this.props.image} alt={this.props.title}></img>
+            <img src={image} alt={title}></img>
               <div className="middle">
                 <div className="text">
-                  {this.props.title}<br></br>
-                  ${this.props.price}
+                  {title}<br></br>
+                  ${price}<br></br>
                 </div>
               </div>            
           </div>

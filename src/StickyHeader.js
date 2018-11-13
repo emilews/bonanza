@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Sticky from 'react-sticky-el';
 import DropdownMenuHandler from './Dropdownmenu'
 
 import './StickyHeader.css'

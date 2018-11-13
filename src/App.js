@@ -32,16 +32,11 @@ class App extends Component {
   }
 
   cat(){
-    fetch('http://127.0.0.1:8000/api/v1/category/LIC').then(
-      data => data.json()
-     ).then((result) =>{
-       this.setState({
-         data : result,
-         loaded : true
-       })
-       this.forceUpdate();
-     }
-     )
+    this.setState({
+      data: this.state.data.filter(prod => {
+        return prod.category === 'LIC'
+      })
+    })
    }
    cat2(){
     fetch('http://127.0.0.1:8000/api/v1/category/CAM').then(
@@ -51,7 +46,6 @@ class App extends Component {
          data : result,
          loaded : true
        })
-       this.forceUpdate();
      }
      )
    }
@@ -63,7 +57,6 @@ class App extends Component {
          data : result,
          loaded : true
        })
-       this.forceUpdate();
      }
      )
    }
@@ -82,7 +75,7 @@ class App extends Component {
         </div>
         <div className="data-container">
           {this.state.data.map(function(prod, index){
-                return (<Product title = {prod.title} price = {prod.price} image = {prod.image}/>)
+                return (<Product prod = {prod}/>)
                 }
               )
           }
