@@ -31,23 +31,19 @@ class App extends Component {
     )
   }
 
-  cat(){
+  licra(){
     this.setState({
       data: this.state.data.filter(prod => {
         return prod.category === 'LIC'
       })
     })
    }
-   cat2(){
-    fetch('http://127.0.0.1:8000/api/v1/category/CAM').then(
-      data => data.json()
-     ).then((result) =>{
-       this.setState({
-         data : result,
-         loaded : true
-       })
-     }
-     )
+   camiseta(){
+    this.setState({
+      data: this.state.data.filter(prod => {
+        return prod.category === 'CAM'
+      })
+    })
    }
    todo(){
     fetch('http://127.0.0.1:8000/api/v1/post/').then(
@@ -69,8 +65,8 @@ class App extends Component {
         </header>
         <div className="cat-container">
           <button onClick={this.todo.bind(this)}>Todo</button>
-          <button onClick={this.cat.bind(this)}>Licra</button>
-          <button onClick={this.cat2.bind(this)}>Camiseta</button>
+          <button onClick={this.camiseta.bind(this)}>Licra</button>
+          <button onClick={this.licra.bind(this)}>Camiseta</button>
           
         </div>
         <div className="data-container">
