@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import { MDBBtn } from "mdbreact";
 import Product from './Product'
 import StickyHeader from './StickyHeader'
+import Footer from './Footer'
+
 
 class App extends Component {
   constructor(props) {
@@ -64,9 +66,9 @@ class App extends Component {
           <StickyHeader/>
         </header>
         <div className="cat-container">
-          <button onClick={this.todo.bind(this)}>Todo</button>
-          <button onClick={this.camiseta.bind(this)}>Licra</button>
-          <button onClick={this.licra.bind(this)}>Camiseta</button>
+          <MDBBtn  size="lg" color="elegant" onClick={this.todo.bind(this)}>Todo</MDBBtn>
+          <MDBBtn  size="lg" color="elegant" onClick={this.camiseta.bind(this)}>Licra</MDBBtn>
+          <MDBBtn  size="lg" color="elegant"onClick={this.licra.bind(this)}>Camiseta</MDBBtn>
           
         </div>
         <div className="data-container">
@@ -76,6 +78,10 @@ class App extends Component {
               )
           }
         </div>
+        <div className="footer-container">
+          <Footer/>
+        </div>
+        
       </div>
     );
   }

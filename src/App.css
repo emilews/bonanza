@@ -1,12 +1,16 @@
 .data-container {
+  min-height: 85vh;
   padding-top: 50px;
   padding-right: 80px;
-  padding-bottom: 4000px;
   padding-left: 80px;
   background-color: beige;
+  
 }
 .header {
   position: absolute;
   top: 0;
   z-index: 999
+}
+.footer-container{
+  background-color: #efbe43;
 }
