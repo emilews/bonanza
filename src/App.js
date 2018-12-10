@@ -92,7 +92,7 @@ class App extends Component {
      
             <div className="d-flex bd-highlight"  > 
            
-              <MDBBtn className="botones" size="lg" color="elegant" onClick={this.todo.bind(this)}>Todo</MDBBtn>
+              <MDBBtn className="p-2 flex-fill bd-highlight" size="lg" color="elegant" onClick={this.todo.bind(this)}>Todo</MDBBtn>
               <MDBBtn  className="p-2 flex-fill bd-highlight" size="lg" color ="elegant" onClick={this.camiseta.bind(this)}>Camiseta</MDBBtn>
               <MDBBtn className="p-2 flex-fill bd-highlight" size="lg" color="elegant"onClick={this.licra.bind(this)}>Licra</MDBBtn>
               <MDBBtn className="p-2 flex-fill bd-highlight" size="lg" color="elegant"onClick={this.algodon.bind(this)}>Algodón</MDBBtn>
