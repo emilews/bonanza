@@ -25,9 +25,9 @@ class DropdownMenuHandler extends Component{
   render(){
     return(
       <div>
+      <h1 className="titulo">Telas Bonanza </h1>
+      
        
-          <img className="logo" src="http://localhost:8000/media/logo3n.png" />
-
       </div>
         );
     }

@@ -10,26 +10,23 @@ top: 0;
 z-index: 2;
 
   }
-  /*
-.DMenu{
-    position: absolute;
-    right: 10px;
-    top: 20;
+.titulo{
 
-}*/
+  text-align: center ;
+  padding: 3px;
+  font-family: 'Pacifico', cursive;
+}
 
-
-
-
+/*
 .logo{
   
   display: block;
   margin-left: auto;
   margin-right: auto;
- /* width: 50%;
-   height: 60px;*/
+  width: 50%;
+   height: 60px;
   width: 20%;
   height: auto; 
   
 
-  }
+ */
