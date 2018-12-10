@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path, re_path   
 from . import views
+from .views import ListPostView, ListPostByCategory
+
+
 
 urlpatterns = [
-    path('', views.post_list, name='post_list'),
-    path('post/<int:pk>/', views.post_detail, name='post_detail'),
-    path('post/new', views.post_new, name='post_new'),
-    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
+
+     path('post/', ListPostView.as_view(), name="post-all"),
+     re_path('^category/(?P<category>.+)/$', ListPostByCategory.as_view()),
 ]
