@@ -1,16 +1,13 @@
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post
+from .models import Category, Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.views.generic import TemplateView
 #this is for the rest API
 from .serializer import PostSerializer
 from rest_framework import generics
-
-
-
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')

@@ -5,86 +5,126 @@ import Product from './Product'
 import StickyHeader from './StickyHeader'
 import Footer from './Footer'
 
-
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       data : [],
-      loaded: false
+      loaded: false,
+      category: ''
       }
 
       
     }
   
-
   componentDidMount(){
-    fetch('http://127.0.0.1:8000/api/v1/post/').then(
-     data => data.json()
-     
-    ).then((result) =>{
-      this.setState({
-        data : result,
-        loaded : true
-      })
-      console.log(this.state.data)
+    fetch('http://127.0.0.1:8000/api/v1/post/')
+      .then(
+        response => response.json()
+      ).then((result) =>{
+        this.setState({
+          data : result,
+          loaded : true
+        })
+          console.log(this.state.data)
+        }
+      )
     }
-    )
-  }
 
-  licra(){
+  licra() {
     this.setState({
-      data: this.state.data.filter(prod => {
-        return prod.category === 'LIC'
-      })
+      category: 'LIC'
     })
-   }
-   camiseta(){
+    // this.setState({
+      //   data: this.state.data.filter(prod => {
+        //     return prod.category === 'LIC'
+        
+        //   })
+        // })
+      }
+      
+      
+  camiseta(){
     this.setState({
-      data: this.state.data.filter(prod => {
-        return prod.category === 'CAM'
-      })
+      category: 'CAM'
     })
-   }
-   todo(){
-    fetch('http://127.0.0.1:8000/api/v1/post/').then(
-      data => data.json()
-     ).then((result) =>{
-       this.setState({
-         data : result,
-         loaded : true
-       })
-     }
-     )
+    // this.setState({
+      //   data: this.state.data.filter(prod => {
+        //     return prod.category === 'CAM'
+        //   })
+        // })
+      }
+      
+  algodon(){
+    this.setState({
+      category: 'ALG'
+    })
+    // this.setState({
+      //   data: this.state.data.filter(prod => {
+        //     return prod.category === 'ALG'
+        //   })
+        // })
+      }
+      
+  todo(){
+    this.setState({
+      category: ''
+    })
+    // fetch('http://127.0.0.1:8000/api/v1/post/').then(
+    //   data => data.json()
+    //  ).then((result) =>{
+    //    this.setState({
+    //      data : result,
+    //      loaded : true
+    //    })
+    //  }
+    //  )
    }
 
   render() {
     return (
       <div className="App">
         <header className="Sticker">
-          <StickyHeader/>
+      <StickyHeader>  </StickyHeader> 
+      <div className="cat-container">
+
+     
+            <div className="d-flex bd-highlight"  > 
+           
+              <MDBBtn className="botones" size="lg" color="elegant" onClick={this.todo.bind(this)}>Todo</MDBBtn>
+              <MDBBtn  className="p-2 flex-fill bd-highlight" size="lg" color ="elegant" onClick={this.camiseta.bind(this)}>Camiseta</MDBBtn>
+              <MDBBtn className="p-2 flex-fill bd-highlight" size="lg" color="elegant"onClick={this.licra.bind(this)}>Licra</MDBBtn>
+              <MDBBtn className="p-2 flex-fill bd-highlight" size="lg" color="elegant"onClick={this.algodon.bind(this)}>Algodón</MDBBtn>
+            </div>
+           
+        </div>  
         </header>
-        <div className="cat-container">
-          <MDBBtn  size="lg" color="elegant" onClick={this.todo.bind(this)}>Todo</MDBBtn>
-          <MDBBtn  size="lg" color="elegant" onClick={this.camiseta.bind(this)}>Licra</MDBBtn>
-          <MDBBtn  size="lg" color="elegant"onClick={this.licra.bind(this)}>Camiseta</MDBBtn>
-          
-        </div>
+
         <div className="data-container">
-          {this.state.data.map(function(prod, index){
+          {/* {this.state.data.map(function(prod, index){
                 return (<Product prod = {prod}/>)
                 }
               )
+          } */}
+          {
+            this.state.data
+              .filter((prod) => prod.category === this.state.category || !Boolean(this.state.category))
+              .map((prod) => <Product prod={prod} />)
           }
         </div>
+
+
+
+       
         <div className="footer-container">
-          <Footer/>
+           <Footer/>
         </div>
         
       </div>
     );
   }
+
 }
 
 export default App;

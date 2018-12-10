@@ -21,15 +21,13 @@ class DropdownMenuHandler extends Component{
     this.forceUpdate();
     console.log(this.state.data)
   }
+
   render(){
     return(
-      <div className="Sticker">
-        <div className="Titulo">
-          Telas Bonanza
-        </div>
-        <div className="DMenu">
-        
-        </div>
+      <div>
+       
+          <img className="logo" src="http://localhost:8000/media/logo3n.png" />
+
       </div>
         );
     }
