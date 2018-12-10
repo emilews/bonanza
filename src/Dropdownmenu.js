@@ -26,8 +26,6 @@ class DropdownMenuHandler extends Component{
     return(
       <div>
       <h1 className="titulo">Telas Bonanza </h1>
-      
-       
       </div>
         );
     }
