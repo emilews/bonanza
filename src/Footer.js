@@ -59,7 +59,7 @@ class FooterPagePro extends React.Component {
               <i class="fas fa-stroopwafel">
               <a style={{display: "table-cell"}} 
               href="https://goo.gl/maps/N3nUcGqvw5C2" 
-              target="_blank" >
+              target="_blank"  rel="noopener noreferrer"  >
               Ubicación
               </a>
               </i>
@@ -71,7 +71,7 @@ class FooterPagePro extends React.Component {
             <Col md="2" className="b-3">
               <h6 className="title font-weight-bold">
               
-              <a style={{display: "table-cell"}} href="https://www.facebook.com/TelasBonanzaHermosillo/" target="_blank">Facebook</a>
+              <a style={{display: "table-cell"}} href="https://www.facebook.com/TelasBonanzaHermosillo/" target="_blank"  rel="noopener noreferrer" >Facebook</a>
 
               </h6>
             </Col>

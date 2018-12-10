@@ -2,11 +2,6 @@ import React, {Component} from 'react';
 import  './Product.css';
 
 class Product extends Component{
-  constructor(props){
-    super(props)
-
-   
-  }
     render() {
       const {image, title, price } = this.props.prod
       // const image = this.props.prod.image

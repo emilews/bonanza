@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import './Dropdownmenu.css'
 
 class DropdownMenuHandler extends Component{
@@ -25,9 +24,7 @@ class DropdownMenuHandler extends Component{
   render(){
     return(
       <div>
-       
-          <img className="logo" src="http://localhost:8000/media/logo3n.png" />
-
+       <h1 className="titulo">Telas Bonanza</h1>
       </div>
         );
     }
